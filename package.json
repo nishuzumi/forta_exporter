@@ -1,0 +1,18 @@
+{
+  "name": "forta_metric",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node-fetch": "2",
+    "prom-client": "^14.0.1",
+    "shelljs": "^0.8.5",
+    "zx": "^7.0.3"
+  }
+}
