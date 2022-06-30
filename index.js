@@ -32,10 +32,17 @@ const getGraphInfo = async ()=>{
 
 (async function () {
     console.log('running')
-    const address = cli.exec("forta account address", { silent: true }).stderr.replace('\n', '')
+    
+    var address;
+    if (process.env.IN_CONTAINER === "true") {
+        address = process.env.NODE_ADDR
+    } else {
+        address = cli.exec("forta account address", { silent: true }).stderr.replace('\n', '')
+    }
     if (address.length != '42') {
         throw new Error("Can not found address")
     }
+
     const forta_rpc = new client.Gauge({
         name: "forta_rpc",
         help: "check forta state",
