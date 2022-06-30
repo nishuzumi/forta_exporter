@@ -17,6 +17,6 @@ Default Port is 9889
 
 ### use by docker
 ```
-docker build -t forta_exporter .
-docker run --name forta-exporter -p 9889:9889 -itd -e SCAN_ADDR={YOUR_SCAN_NODE_ADDRESS} forta_exporter
+node="$(forta account address 2>&1)"
+docker run --name forta-exporter -p 9889:9889 -itd -e SCAN_ADDR=$node 108356037/forta-exporter:v1
 ```
